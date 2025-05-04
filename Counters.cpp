@@ -19,6 +19,13 @@ void countDown() {
 }
 
 int main() {
+    //thread for counting up
+    thread count1(countUp);
+    count1.join(); //tells thread to wait until completion
+
+    //thread for counting down
+    thread count2(countDown);
+    count2.join();
 
     return 0;
 }
